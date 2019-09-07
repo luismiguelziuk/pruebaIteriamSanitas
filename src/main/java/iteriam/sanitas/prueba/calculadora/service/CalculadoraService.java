@@ -6,4 +6,6 @@ import iteriam.sanitas.prueba.calculadora.dto.salida.ResultadoDTO;
 public interface CalculadoraService {
 
 	public ResultadoDTO sumar(EntradaDTO entrada);
+
+	public ResultadoDTO resta(EntradaDTO entrada);
 }

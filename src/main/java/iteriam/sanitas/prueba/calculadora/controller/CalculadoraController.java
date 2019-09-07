@@ -19,7 +19,7 @@ public class CalculadoraController {
 	private CalculadoraService calculadoraService;
 	
 	  /**
-	   * Suma dos numeros encapsulados en el ojeto EntradaSumaDTO compuesto por dos Double
+	   * Suma dos numeros encapsulados en el objeto EntradaSumaDTO compuesto por dos Double que se pasa como un JSON como un String
 	   *
 	   * @return Resultado de la suma 
 	   */
@@ -27,6 +27,17 @@ public class CalculadoraController {
 	public ResultadoDTO suma(@RequestBody String entrada) {
 		Gson gson = new Gson();
 		return calculadoraService.sumar(gson.fromJson(entrada, EntradaDTO.class));
+	}
+	
+	  /**
+	   * Resta dos numeros, el segundo al primero encapsulados en el objeto EntradaSumaDTO compuesto por dos Double que se pasa como un JSON como un String
+	   *
+	   * @return Resultado de la suma 
+	   */
+	@GetMapping("/resta")
+	public ResultadoDTO resta(@RequestBody String entrada) {
+		Gson gson = new Gson();
+		return calculadoraService.resta(gson.fromJson(entrada, EntradaDTO.class));
 	}
 	
 
