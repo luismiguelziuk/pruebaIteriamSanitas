@@ -8,6 +8,9 @@ public class ResultadoDTO {
 		this.resultado = resultado;
 	}
 
+	public ResultadoDTO() {
+	}
+
 	public Double getResultado() {
 		return resultado;
 	}
@@ -18,6 +21,6 @@ public class ResultadoDTO {
 	
 	@Override
 	public String toString() {
-		return "ResultadoSumaDTO [resultado=" + resultado + "]";
+		return "ResultadoSumaDTO [resultado=" + getResultado() + "]";
 	}
 }

@@ -9,7 +9,7 @@ import iteriam.sanitas.prueba.calculadora.dto.salida.ResultadoDTO;
 public class CalculadoraServiceImpl implements CalculadoraService {
 
 	@Override
-	public ResultadoDTO sumar(EntradaDTO entrada) {
+	public ResultadoDTO suma(EntradaDTO entrada) {
 		return new ResultadoDTO(entrada.getNumero1() + entrada.getNumero2());
 	}
 

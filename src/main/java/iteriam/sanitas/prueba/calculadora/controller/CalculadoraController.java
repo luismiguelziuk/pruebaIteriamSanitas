@@ -13,32 +13,38 @@ import iteriam.sanitas.prueba.calculadora.dto.salida.ResultadoDTO;
 import iteriam.sanitas.prueba.calculadora.service.CalculadoraService;
 
 @RestController
-@RequestMapping("/calculadora") 
+@RequestMapping("/calculadora")
 public class CalculadoraController {
+	private final CalculadoraService calculadoraService;
+
 	@Autowired
-	private CalculadoraService calculadoraService;
-	
-	  /**
-	   * Suma dos numeros encapsulados en el objeto EntradaSumaDTO compuesto por dos Double que se pasa como un JSON como un String
-	   *
-	   * @return Resultado de la suma 
-	   */
+	public CalculadoraController(CalculadoraService calculadoraService) {
+		this.calculadoraService = calculadoraService;
+	}
+
+	/**
+	 * Suma dos numeros encapsulados en el objeto EntradaSumaDTO compuesto por dos
+	 * Double que se pasa como un JSON como un String
+	 *
+	 * @return Resultado de la suma
+	 */
 	@GetMapping("/suma")
 	public ResultadoDTO suma(@RequestBody String entrada) {
 		Gson gson = new Gson();
-		return calculadoraService.sumar(gson.fromJson(entrada, EntradaDTO.class));
+		return calculadoraService.suma(gson.fromJson(entrada, EntradaDTO.class));
 	}
-	
-	  /**
-	   * Resta dos numeros, el segundo al primero encapsulados en el objeto EntradaSumaDTO compuesto por dos Double que se pasa como un JSON como un String
-	   *
-	   * @return Resultado de la suma 
-	   */
+
+	/**
+	 * Resta dos numeros, el segundo al primero encapsulados en el objeto
+	 * EntradaSumaDTO compuesto por dos Double que se pasa como un JSON como un
+	 * String
+	 *
+	 * @return Resultado de la suma
+	 */
 	@GetMapping("/resta")
 	public ResultadoDTO resta(@RequestBody String entrada) {
 		Gson gson = new Gson();
 		return calculadoraService.resta(gson.fromJson(entrada, EntradaDTO.class));
 	}
-	
 
 }
