@@ -1,8 +1,12 @@
 package iteriam.sanitas.prueba.calculadora.dto.entrada;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class EntradaDTO {
 
+	@ApiModelProperty(value = "Elemento aritmetico 1", required = true, example = "1", position = 1)
 	Double numero1;
+	@ApiModelProperty(value = "Elemento aritmetico 2", required = true, example = "1", position = 2)
 	Double numero2;
 
 	public EntradaDTO(Double numero1, Double numero2) {
@@ -31,7 +35,7 @@ public class EntradaDTO {
 
 	@Override
 	public String toString() {
-		return "EntradaSumaDTO [numero1=" + getNumero1() + ", numero2=" + getNumero2() + "]";
+		return "EntradaDTO [numero1=" + getNumero1() + ", numero2=" + getNumero2() + "]";
 	}
 
 }
