@@ -60,6 +60,6 @@ public class CalculadoraApplication {
 	private ApiInfo apiInfo() {
 
 		return new ApiInfo("API Prueba Iteriam-Sanitas",
-				"API de prueba para proceso de seleccion de Sanitas con Iteriam", appVersion, "urn:tos", "", "", "");
+				"API de prueba para proceso de seleccion de Sanitas con Iteriam", appVersion, "http://localhost:9080/swagger-ui.html", "", "", "");
 	}
 }
