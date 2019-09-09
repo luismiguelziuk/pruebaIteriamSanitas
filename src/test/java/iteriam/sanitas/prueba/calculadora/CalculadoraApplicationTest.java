@@ -1,18 +1,18 @@
 package iteriam.sanitas.prueba.calculadora;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fasterxml.classmate.TypeResolver;
 
-@RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class CalculadoraApplicationTest {
 
 	CalculadoraApplication calculadoraApplication;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		TypeResolver typeResolver = new TypeResolver();
 		calculadoraApplication = new CalculadoraApplication(typeResolver, "0.0.1");
@@ -20,7 +20,7 @@ public class CalculadoraApplicationTest {
 
 	@Test
 	public void testApplication() {
-		calculadoraApplication.swaggerApi();
+		assertNotNull(calculadoraApplication.swaggerApi());
 	}
 
 }
